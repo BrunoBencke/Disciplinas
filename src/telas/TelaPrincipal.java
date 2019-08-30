@@ -52,7 +52,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Alocador de Disciplinas");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setLayout(null);
 
         jLabel1.setText("Disciplinas : *");
@@ -69,7 +69,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jLabel4.setText("Quantidade da População : *");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(39, 170, 140, 24);
+        jLabel4.setBounds(39, 170, 160, 24);
 
         txfDisciplinas.setText("9");
         jPanel1.add(txfDisciplinas);
@@ -181,7 +181,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         int populacao = Integer.parseInt(txfPopulacao.getText());
         
         if((disciplinas > 0 && disciplinas < 10) && (professores > 0 && professores < 7) && (turnos > 0 && turnos < 6) && (geracoes > 0 && geracoes < 501) && (populacao > 0 && populacao < 1001)){
-            String retorno[] = apoio.geraPopulacao(populacao, geracoes);
+            String retorno[] = apoio.geraPopulacao(populacao, geracoes, turnos, professores, disciplinas);
             for (int i = 0; i < populacao; i++) {
                 System.out.println(retorno[i]);
             }
